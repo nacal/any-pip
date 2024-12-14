@@ -4,7 +4,7 @@ import { defineConfig } from 'wxt'
 export default defineConfig({
   extensionApi: 'chrome',
   manifest: {
-    permissions: ['activeTab', 'tabs'],
+    permissions: ['activeTab', 'tabs', 'webNavigation'],
     host_permissions: ['<all_urls>'],
   },
 })
