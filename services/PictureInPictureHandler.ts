@@ -11,10 +11,12 @@ export class PictureInPictureHandler {
       return
     }
 
+    const originalRect = element.getBoundingClientRect()
+
     try {
       const pipWindow = await window.documentPictureInPicture.requestWindow({
-        width: 400,
-        height: 300,
+        width: originalRect.width,
+        height: originalRect.height,
       })
 
       LoadingSpinner.show(pipWindow)
@@ -38,7 +40,6 @@ export class PictureInPictureHandler {
     containerDiv.style.overflow = 'auto'
 
     this.setupPipWindowStyles(pipWindow)
-    this.copyStyles(pipWindow)
     containerDiv.appendChild(wrapper)
     pipWindow.document.body.appendChild(containerDiv)
 
@@ -72,8 +73,6 @@ export class PictureInPictureHandler {
       const newElement = pipWindow.document.createElement(
         el.tagName.toLowerCase()
       )
-
-      const elRect = el.getBoundingClientRect()
 
       if (!wrapper) {
         wrapper = newElement as HTMLElement
