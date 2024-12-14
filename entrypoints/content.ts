@@ -16,7 +16,9 @@ const eventHandlers = {
     e.preventDefault()
     e.stopPropagation()
 
-    await PictureInPictureHandler.createWindow(e.target as Element)
+    const targetElement = e.target as Element
+    ElementSelectorHandler.clearHighlight()
+    await PictureInPictureHandler.createWindow(targetElement)
     ElementSelectorHandler.stop()
   },
 
