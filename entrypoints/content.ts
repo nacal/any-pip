@@ -18,8 +18,8 @@ const eventHandlers = {
 
     const targetElement = e.target as Element
     ElementSelectorHandler.clearHighlight()
-    await PictureInPictureHandler.createWindow(targetElement)
     ElementSelectorHandler.stop()
+    await PictureInPictureHandler.createWindow(targetElement)
   },
 
   handleKeyDown(e: KeyboardEvent): void {
