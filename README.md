@@ -9,5 +9,5 @@ This Chrome extension leverages the Picture-in-Picture (PiP) API to allow you to
 1. Clone or download this repository to your local machine.
 2. Open Chrome and navigate to chrome://extensions/.
 3. Enable "Developer mode" in the top-right corner.
-4. Click "Load unpacked" and select the directory containing the extension files.
+4. Click "Load unpacked" and select the `.output` directory containing the extension files.
 5. The extension will appear in your toolbar, ready to use.
